@@ -1,0 +1,13 @@
+import scipy.optimize
+import math
+import numpy as np
+def func_f1(x):
+    return np.log(1-x)/x-2-200/10000000
+
+#Newton法
+result1 = scipy.optimize.newton(func_f1, 1.0)
+print(result1)
+
+#Brent法
+result2 = scipy.optimize.brentq(func_f1, 1.0, 2.0)
+print(result2)
